@@ -1,0 +1,35 @@
+CREATE TABLE `bookmessage` (
+  `No` int(3) unsigned zerofill NOT NULL AUTO_INCREMENT COMMENT '书本序号',
+  `name` varchar(50) NOT NULL COMMENT '书本名称',
+  `islend` varchar(2) NOT NULL DEFAULT 'F' COMMENT '书本出借状态',
+  `authorid` int(3) unsigned zerofill NOT NULL COMMENT '对应作者id',
+  PRIMARY KEY (`No`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `authormessage` (
+  `id` int(3) unsigned zerofill NOT NULL AUTO_INCREMENT COMMENT '作者id',
+  `name` varchar(50) NOT NULL COMMENT '作者名字',
+  `nationality` varchar(10) DEFAULT NULL COMMENT '作者国籍',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8
+
+
+----将图书信息保存至数据库-----
+
+INSERT INTO authormessage(NAME,nationality) VALUES('余华','China'); 
+INSERT INTO authormessage(NAME,nationality) VALUES('村上春树','Japan'); 
+INSERT INTO authormessage(NAME,nationality) VALUES('芥川龙之介','Japan'); 
+INSERT INTO authormessage(NAME,nationality) VALUES('乔治奥尔维','England'); 
+INSERT INTO authormessage(NAME,nationality) VALUES('阿道司·赫胥黎','England'); 
+INSERT INTO authormessage(NAME,nationality) VALUES('阿尔贝·加缪','France');
+
+
+INSERT INTO bookmessage(NAME,islend,authorid) VALUES('活着','T',001); 
+INSERT INTO bookmessage(NAME,islend,authorid) VALUES('兄弟','F',001); 
+INSERT INTO bookmessage(NAME,islend,authorid) VALUES('弃猫','F',002);
+INSERT INTO bookmessage(NAME,islend,authorid) VALUES('罗生门','T',003); 
+INSERT INTO bookmessage(NAME,islend,authorid) VALUES('1984','F',004); 
+INSERT INTO bookmessage(NAME,islend,authorid) VALUES('美丽新世界','T',005); 
+INSERT INTO bookmessage(NAME,islend,authorid) VALUES('鼠疫','F',006); 
+ 
